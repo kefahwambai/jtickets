@@ -1,82 +1,112 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import tik1 from "../../assets/images/ticket-01.jpg";
-import tik2 from "../../assets/images/ticket-02.jpg";
-import tik3 from "../../assets/images/ticket-03.jpg";
-import tik4 from "../../assets/images/ticket-04.jpg";
-import tik5 from "../../assets/images/ticket-05.jpg";
-import tik6 from "../../assets/images/ticket-06.jpg";
+import tik1 from "../../assets/Ticket/success.jpeg";
+
 
 const tickets = [
-  { img: tik1, title: "Wonderful Festival", description: "Thursday: 05:00 PM to 10:00 PM", location: "Nairobi, Kenya", ticketsLeft: "200" },
-  { img: tik2, title: "Golden Festival", description: "Sunday: 06:00 PM to 09:00 PM", location: "Nairobi, Kenya", ticketsLeft: "260" },
-  { img: tik3, title: "Water Splash Festival", description: "Tuesday: 07:00 PM to 11:00 PM", location: "Nairobi, Kenya", ticketsLeft: "340" },
-  { img: tik4, title: "Tiger Festival", description: "Thursday: 06:40 PM to 11:40 PM", location: "Nairobi, Kenya", ticketsLeft: "420" },
-  { img: tik5, title: "Woodland Festival", description: "Wednesday: 06:00 PM to 09:00 PM", location: "Nairobi, Kenya", ticketsLeft: "420" },
-  { img: tik6, title: "Winter Festival", description: "Saturday: 06:00 PM to 09:00 PM", location: "Nairobi, Kenya", ticketsLeft: "520" },
+  { img: tik1, title: "Success Moutang Live", description: "Saturday: 03:00 PM to 03:00 AM", location: "Alloy Bar & lounge", date: "2024-11-30" },
+  // Add more tickets here to test pagination and filtering
 ];
 
 const ITEMS_PER_PAGE = 3;
 
 export default function TicketsPage() {
   const [currentPage, setCurrentPage] = useState(1);
-  
+  const [filter, setFilter] = useState('Upcoming');
+
   const totalPages = Math.ceil(tickets.length / ITEMS_PER_PAGE);
-  
+
   const handlePageChange = (page) => {
     if (page < 1 || page > totalPages) return;
     setCurrentPage(page);
   };
 
-  const displayedTickets = tickets.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
+  const handleFilterClick = (filterValue) => {
+    setFilter(filterValue);
+    setCurrentPage(1); // Reset to the first page when filter changes
+  };
+
+  const filterTickets = (ticket) => {
+    if (filter === 'Upcoming') {
+      return new Date(ticket.date) > new Date();
+    } else if (filter === 'Past') {
+      return new Date(ticket.date) < new Date();
+    }
+    return true;
+  };
+
+  const displayedTickets = tickets.filter(filterTickets).slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
   return (
-    <div className="tickets-page" style={{ marginTop: '5rem'}}>
+    <div className="tickets-page" style={{ marginTop: '5rem' }}>
       <div className="container">
+        <div className="row mb-4">
+          <div className="col-lg-12 text-center">
+            <ul className="filter-tabs">
+              <li>
+                <a
+                  className={`filter-tab ${filter === 'Upcoming' ? 'active' : ''}`}
+                  onClick={() => handleFilterClick('Upcoming')}
+                >
+                  Upcoming
+                </a>
+              </li>
+              <li>
+                <a
+                  className={`filter-tab ${filter === 'Past' ? 'active' : ''}`}
+                  onClick={() => handleFilterClick('Past')}
+                >
+                  Past
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <div className="row">
           {displayedTickets.map((ticket, index) => (
-            <div className="col-lg-4" key={index}>
-              <div className="ticket-item">
-                <div className="thumb">
-                  <img src={ticket.img} alt={ticket.title} />
-                </div>
-                <div className="down-content">
-                  {/* <span>There Are {ticket.ticketsLeft} Tickets Left For This Show</span> */}
-                  <h4>{ticket.title}</h4>
-                  <ul>
-                    <li>
-                      <i className="fa fa-clock-o"></i> {ticket.description}
-                    </li>
-                    <li><i className="fa fa-map-marker"></i> {ticket.location}</li>
-                  </ul>
-                  <div className="main-dark-button">                    
-                    <a href="#">
-                      <Link to="/tickets">Purchase Tickets</Link>
-                    </a>                   
+            <div className="col-lg-4 mb-4" key={index}>
+              <div className="card h-100 shadow-sm">
+                <img src={ticket.img} alt={ticket.title} className="card-img-top" />
+                <div className="card-body" >
+                  <div className="d-flex align-items-center mb-2">
+                    <div className="date-box text-center mr-3" style={{ marginLeft: '0.4rem'}}>
+                      <h4 className="mb-0 text-danger">{new Date(ticket.date).getDate()}</h4>
+                      <p className="mb-0 text-muted">{new Date(ticket.date).toLocaleString('default', { month: 'short' })}</p>
+                    </div>
+                    <div>
+                      <h5 className="card-title mb-1">{ticket.title}</h5>
+                      <p className="card-text text-muted mb-1"><i className="fa fa-map-marker"></i> {ticket.location}</p>
+                      <p className="card-text text-muted"><i className="fa fa-clock-o"></i> {ticket.description}</p>
+                    </div>
                   </div>
+                  <Link to="/tickets" className="btn btn-danger btn-block">Buy Tickets</Link>
                 </div>
               </div>
             </div>
           ))}
+        </div>
 
-          <div className="col-lg-12">
-            <div className="pagination">
-              <ul>
-                <li>
-                  <a href="#" onClick={() => handlePageChange(currentPage - 1)}>Prev</a>
-                </li>
-                {Array.from({ length: totalPages }, (_, index) => (
-                  <li key={index} className={index + 1 === currentPage ? 'active' : ''}>
-                    <a href="#" onClick={() => handlePageChange(index + 1)}>{index + 1}</a>
+        {totalPages > 1 && (
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="pagination">
+                <ul className="pagination">
+                  <li className="page-item">
+                    <a href="#" className="page-link" onClick={() => handlePageChange(currentPage - 1)}>Prev</a>
                   </li>
-                ))}
-                <li>
-                  <a href="#" onClick={() => handlePageChange(currentPage + 1)}>Next</a>
-                </li>
-              </ul>
+                  {Array.from({ length: totalPages }, (_, index) => (
+                    <li key={index} className={`page-item ${index + 1 === currentPage ? 'active' : ''}`}>
+                      <a href="#" className="page-link" onClick={() => handlePageChange(index + 1)}>{index + 1}</a>
+                    </li>
+                  ))}
+                  <li className="page-item">
+                    <a href="#" className="page-link" onClick={() => handlePageChange(currentPage + 1)}>Next</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Banner() {
-  const targetDate = new Date('2024-12-31T00:00:00');
+  const targetDate = new Date('2024-11-30T15:00:00');
 
   const [timeRemaining, setTimeRemaining] = useState(getTimeRemaining(targetDate));
 
@@ -41,11 +41,10 @@ export default function Banner() {
           <div className="col-lg-12">
             <div className="main-content">
               <div className="next-show">
-                <i className="fa fa-arrow-up" style={{marginTop: '1rem'}}></i>
+                <i className="fa fa-arrow-up" style={{marginTop: '3rem'}}></i>
                 <span>Next Show</span>
               </div>
-              <h6>Opening on Thursday, December 31st</h6>
-              <h2>The Sunny Hill Festival 2024</h2>
+              <h2>Success Moutang Live</h2>
               <div className="main-dark-button">                    
                 <Link to="/tickets">Purchase Tickets</Link>
               </div>

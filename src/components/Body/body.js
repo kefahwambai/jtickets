@@ -7,7 +7,7 @@ export default function Body() {
   return (
     <>
       <Banner/>
-      <Carousel/>
+      {/* <Carousel/> */}
       <TicketsPage/>
     </>
   )
