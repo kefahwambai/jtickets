@@ -40,10 +40,10 @@ export default function Banner() {
         <div className="row">
           <div className="col-lg-12">
             <div className="main-content">
-              <div className="next-show">
+              {/* <div className="next-show">
                 <i className="fa fa-arrow-up" style={{marginTop: '3rem'}}></i>
                 <span>Next Show</span>
-              </div>
+              </div> */}
               <h2>Success Moutang Live</h2>
               <div className="main-dark-button">                    
                 <Link to="/tickets">Purchase Tickets</Link>
