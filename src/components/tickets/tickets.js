@@ -1,20 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import tik1 from "../../assets/Ticket/success.jpeg";
-
-
-const tickets = [
-  { img: tik1, title: "Success Moutang Live", description: "Saturday: 03:00 PM to 03:00 AM", location: "Alloy Bar & lounge", date: "2024-11-30" },
-  // Add more tickets here to test pagination and filtering
-];
+import axios from 'axios';
+import Preloader from '../Preloader/Preloader'; 
 
 const ITEMS_PER_PAGE = 3;
 
 export default function TicketsPage() {
+  const [tickets, setTickets] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [filter, setFilter] = useState('Upcoming');
-
+  const [loading, setLoading] = useState(true);
+  
   const totalPages = Math.ceil(tickets.length / ITEMS_PER_PAGE);
+
+  useEffect(() => {
+    const fetchTickets = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/events');
+        const events = response.data.map(event => ({
+          id: event.id,
+          img: event.image ? `http://localhost:3000${event.image.url}` : '',
+          title: event.name,
+          description: event.description,
+          location: event.location,
+          date: event.date
+        }));
+        setTickets(events);
+      } catch (error) {
+        console.error("Error fetching events:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTickets();
+  }, []);
 
   const handlePageChange = (page) => {
     if (page < 1 || page > totalPages) return;
@@ -23,7 +43,7 @@ export default function TicketsPage() {
 
   const handleFilterClick = (filterValue) => {
     setFilter(filterValue);
-    setCurrentPage(1); // Reset to the first page when filter changes
+    setCurrentPage(1);
   };
 
   const filterTickets = (ticket) => {
@@ -36,6 +56,10 @@ export default function TicketsPage() {
   };
 
   const displayedTickets = tickets.filter(filterTickets).slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
+
+  if (loading) {
+    return <Preloader />;
+  }
 
   return (
     <div className="tickets-page" style={{ marginTop: '5rem' }}>
@@ -63,27 +87,36 @@ export default function TicketsPage() {
           </div>
         </div>
         <div className="row">
-          {displayedTickets.map((ticket, index) => (
-            <div className="col-lg-4 mb-4" key={index}>
-              <div className="card h-100 shadow-sm">
-                <img src={ticket.img} alt={ticket.title} className="card-img-top" />
-                <div className="card-body" >
-                  <div className="d-flex align-items-center mb-2">
-                    <div className="date-box text-center mr-3" style={{ marginLeft: '0.4rem'}}>
-                      <h4 className="mb-0 text-danger">{new Date(ticket.date).getDate()}</h4>
-                      <p className="mb-0 text-muted">{new Date(ticket.date).toLocaleString('default', { month: 'short' })}</p>
+          {displayedTickets.length > 0 ? (
+            displayedTickets.map((ticket, index) => (
+              <div className="col-lg-4 mb-4" key={index}>
+                <div className="card h-100 w-75 shadow-sm">
+                  <img src={ticket.img} alt={ticket.title} className="card-img-top responsive-img" style={{ height: '200px', objectFit: 'cover' }}  />
+                  <div className="card-body">
+                    <div className="d-flex align-items-center mb-2">
+                      <div className="date-box text-center mr-3" style={{ marginLeft: '0.4rem' }}>
+                        <h4 className="mb-0">{new Date(ticket.date).getDate()}</h4>
+                        <p className="mb-0 text-muted">{new Date(ticket.date).toLocaleString('default', { month: 'short' })}</p>
+                      </div>
+                      <div className="ml-3">
+                        <h5 className="card-title mb-1">{ticket.title}</h5>                       
+                        <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        <h5 className="card-location">{ticket.location}</h5>
+                      </div>
                     </div>
-                    <div>
-                      <h5 className="card-title mb-1">{ticket.title}</h5>
-                      <p className="card-text text-muted mb-1"><i className="fa fa-map-marker"></i> {ticket.location}</p>
-                      <p className="card-text text-muted"><i className="fa fa-clock-o"></i> {ticket.description}</p>
-                    </div>
+                    <Link to={`/tickets/${ticket.id}`} className="btnnn btn-block"><p>Buy Ticket</p></Link>
+
                   </div>
-                  <Link to="/tickets" className="btn btn-danger btn-block">Buy Tickets</Link>
                 </div>
               </div>
+            ))
+          ) : (
+            <div className="col-lg-12 text-center">
+              <p>No Events available.</p>
+              <br/>
+              <p>All previous Events Will render here.</p>
             </div>
-          ))}
+          )}
         </div>
 
         {totalPages > 1 && (

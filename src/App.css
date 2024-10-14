@@ -13,6 +13,258 @@
   }
 }
 
+.tickets-page {
+  padding: 2rem 0; 
+}
+
+.container {
+  max-width: 1200px; 
+  margin: auto; 
+}
+
+.filter-tabs {
+  list-style: none; 
+  padding: 0; 
+  display: flex; 
+  justify-content: center; 
+}
+
+.filter-tab {
+  cursor: pointer; 
+  padding: 0.5rem 1rem; 
+  border-radius: 10px !important;
+  transition: background-color 0.3s; 
+}
+
+.filter-tab.active {
+  background-color: #dc3545;
+  color: #ffffff; 
+}
+
+.card {
+  border: none; 
+  border-radius: 20px !important; 
+  overflow: hidden; 
+  transition: transform 0.2s; 
+}
+
+.card:hover {
+  transform: scale(1.05); 
+}
+
+.card-img-top {
+  border-radius: 10px 10px 0 0;
+}
+
+.date-box {
+  background-color: #ffe6e6;
+  border-radius: 10px !important;
+  width: 50px !important; 
+}
+
+.date-box {
+  color: #00A19B;
+}
+
+.card-title {
+  font-size: 1.25rem !important; 
+  font-weight: bold;
+  color: #343a40;
+}
+
+.card-location {
+  display: inline-block; 
+  margin-left: 5px;
+  font-size: 0.75rem; 
+  color: #6c757d;
+}
+
+.btnnn {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1rem !important;
+  background-color: #dc3545; 
+  border: none; 
+  color: whitesmoke !important;
+  text-align: center !important;
+  width: 35% !important;
+  height: 1.9rem;
+  margin: 0 auto;
+  border-radius: 10px; 
+  transition: background-color 0.3s; 
+}
+
+.btnnn:hover {
+  background-color: #c82333; 
+}
+
+.btnnn p {
+  margin: 0 auto !important;
+  color: white;
+  font-weight: 400 !important;
+}
+
+.pagination {
+  justify-content: center;
+  margin-top: 1.5rem; 
+}
+
+.page-item {
+  margin: 0 0.5rem;
+}
+
+.page-link {
+  color: #ffffff !important; 
+  text-decoration: none; 
+}
+
+.page-item.active .page-link {
+  background-color: #dc3545;
+  color: #ffffff;
+  border-radius: 5px; 
+}
+
+
+.about-us-container {
+  margin-top: 3rem; 
+  max-width: 768px;    
+  margin-left: auto;   
+  margin-right: auto;
+  padding-top: 2.5rem;
+  padding-left: 1.25rem; 
+  padding-right: 1.25rem;
+}
+
+.about-us-container h1,
+.about-us-container h2 {
+  text-align: center;
+}
+
+.about-us-container p, .about-us-container ul {
+  text-align: justify;
+}
+
+.about-us-container h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.about-us-container h2 {
+  font-size: 1.875rem;
+  margin-top: 2rem; 
+}
+
+.about-us-container p {
+  margin-bottom: 1.5rem; 
+}
+
+.about-us-container ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+}
+
+.about-us-container ul li {
+  margin-bottom: 0.5rem;
+}
+
+.about-us-container a {
+  color: #2563eb; 
+}
+
+.privacy-policy-container {
+  max-width: 768px;  
+  margin-left: auto;   
+  margin-right: auto;
+  padding-top: 2.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.privacy-policy-container h1 {
+  font-size: 2.5rem;   
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.privacy-policy-container h2 {
+  font-size: 1.875rem; 
+}
+
+.privacy-policy-container p {
+  margin-bottom: 1.5rem;
+  text-align: justify; 
+}
+
+.privacy-policy-container a {
+  color: #2563eb;
+}
+
+.terms-conditions-container {
+  max-width: 768px;  
+  margin-left: auto; 
+  margin-right: auto;
+  padding-top: 2.5rem; 
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.terms-conditions-container h1 {
+  font-size: 2.5rem;   
+  font-weight: bold;
+  margin-bottom: 1.5rem; 
+}
+
+.terms-conditions-container h2 {
+  font-size: 1.875rem; 
+  margin-bottom: 1rem;  
+}
+
+.terms-conditions-container p {
+  margin-bottom: 1.5rem;
+  text-align: justify;  
+}
+
+.terms-conditions-container a {
+  color: #2563eb;
+}
+
+
+
+
+
+
+.helpline {
+  font-size: 1rem;
+}
+
+.helpline a {
+
+}
+
+.helpline span {
+  color: black;
+}
+
+.menu-trigger {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.about-footer{
+   margin-bottom: 10rem;
+} 
+
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .helpline {
+    margin-bottom: 1rem;
+  }
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -597,6 +849,128 @@ header
 }
 
 
+.ticket-selection {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.ticket-label {
+  font-weight: bold;
+  margin-bottom: 10px;  
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.ticket-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  text-align: center !important;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.ticket-select:hover {
+  border-color: #0056b3;
+}
+
+.ticket-select:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Slight focus glow */
+}
+
+.checkout-page {
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 0 10px;
+}
+
+.payment-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.ticket-card {
+  border: none;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.payment-buttons {
+  display: flex;
+  justify-content: start;
+}
+
+.payment-btn {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+}
+
+.payment-form {
+  margin-top: 20px;
+}
+
+button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.alert {
+  margin-top: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.responsive-img {
+  max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+  height: auto; /* Maintain the aspect ratio */
+  object-fit: cover; /* Optional: ensures the image covers the element while maintaining the aspect ratio */
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 1.1rem;
+}
+
+@media (min-width: 576px) {
+  .checkout-page {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .checkout-page {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .checkout-page {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .checkout-page {
+    max-width: 1140px;
+  }
+}
+
 /* 
 ---------------------------------------------
 banner
@@ -1142,6 +1516,98 @@ Subscribe
 Footer
 --------------------------------------------- 
 */
+/* .footer-basic {
+  padding:40px 0;
+  background-color:#ffffff;
+  color:#4b4c4d;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+} */
+.copyright {
+  margin-bottom: -3rem;
+}
+
+footer {
+  color: black !important;
+
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: darkgray;
+}
+
+/* footer .social a {
+  font-size: 1.5rem; 
+} */
+
+/* footer ul {
+  padding: 0;
+}
+
+footer p {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #6c757d;
+} */
+
+
 .date-box {
   width: 50px;
 }
@@ -1296,6 +1762,7 @@ Footer
   margin: 0;
   display: flex;
   justify-content: center;
+  cursor: pointer;
   /* border-bottom: 2px solid #ddd; */
   margin-bottom: 2rem;
 }
@@ -1319,13 +1786,13 @@ Footer
 }
 
 .filter-tabs .filter-tab.active {
-  background-color: #dc3545;
+  background-color: darkgray;
   color: #fff;
-  border-bottom: 2px solid #dc3545;
+  border-bottom: 2px solid darkgray;;
 }
 
 .filter-tabs .filter-tab.active:hover {
-  background-color: #c82333;
+  background-color: darkgray;
   color: #fff;
 }
 
@@ -1389,7 +1856,7 @@ About Us Page
 */
 
 .page-heading-about {
-  background-image: url(../src/assets/images/about_bg.jpg);
+  /* background-image: url(../src/assets/images/about_bg.jpg); */
   background-size: cover;
   background-repeat: no-repeat;
   padding: 110px 0px 410px 0px;
@@ -1821,9 +2288,10 @@ Shows Events Page
 */
 
 .page-heading-shows-events {
-  background-image: url(../src/assets/images/shows_events_bg.jpg);
-  background-size: cover;
+  /* background-image: url(../src/assets/images/shows_events_bg.jpg); */
+  /* background-position: ; */
   background-repeat: no-repeat;
+
   padding: 110px 0px;
   text-align: center;
 }
