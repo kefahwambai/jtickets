@@ -16,10 +16,10 @@ export default function TicketsPage() {
   useEffect(() => {
     const fetchTickets = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/events');
+        const response = await axios.get('https://ticketfusionapi.onrender.com/events');
         const events = response.data.map(event => ({
           id: event.id,
-          img: event.image ? `http://localhost:3000${event.image.url}` : '',
+          img: event.image ? `https://ticketfusionapi.onrender.com${event.image.url}` : '',
           title: event.name,
           description: event.description,
           location: event.location,

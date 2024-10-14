@@ -1,7 +1,7 @@
 import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css'; // Import Owl Carousel CSS
-import 'owl.carousel/dist/assets/owl.theme.default.css'; // Import Owl Carousel theme CSS
+import 'owl.carousel/dist/assets/owl.carousel.css'; 
+import 'owl.carousel/dist/assets/owl.theme.default.css'; 
 import ev1 from "../../assets/images/show-events-01.jpg";
 import ev2 from "../../assets/images/show-events-02.jpg";
 import ev3 from "../../assets/images/show-events-03.jpg";

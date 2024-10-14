@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function TicketDetails() {
   const { id } = useParams();
-  const [quantity, setQuantity] = useState(1); // Default to 1 ticket
+  const [quantity, setQuantity] = useState(1); 
   const [selectedTicket, setSelectedTicket] = useState(null); 
   const [eventDetails, setEventDetails] = useState(null); 
   const [loading, setLoading] = useState(true); 
@@ -18,7 +18,7 @@ export default function TicketDetails() {
   useEffect(() => {
     const fetchEventDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/events/${id}`);  
+        const response = await axios.get(`https://ticketfusionapi.onrender.com/events/${id}`);  
         const eventData = response.data;
         setEventDetails(eventData);
 
@@ -81,7 +81,7 @@ export default function TicketDetails() {
     <div className="ticket-details-container" >
       <div className="page-heading-shows-events" 
       style={{
-        backgroundImage: `url(http://localhost:3000${eventDetails?.image?.url || ''})`,
+        backgroundImage: `url(https://ticketfusionapi.onrender.com${eventDetails?.image?.url || ''})`,
         backgroundSize: 'cover',
         backgroundPosition: 'bottom',
         backgroundRepeat: 'no-repeat',
@@ -101,7 +101,7 @@ export default function TicketDetails() {
             <div className="ticket-image">
               {eventDetails?.image?.url ? (
                 <img
-                  src={`http://localhost:3000${eventDetails.image.url}`}
+                  src={`https://ticketfusionapi.onrender.com${eventDetails.image.url}`}
                   alt={eventDetails?.name}
                 />
               ) : (
