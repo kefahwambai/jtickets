@@ -42,10 +42,10 @@ const CheckoutPage = () => {
         revenue: totalPrice,
       };
   
-      const saleResponse = await axios.post('https://ticketfusionapi.onrender.com/sales', saleData);
+      // const saleResponse = await axios.post('https://ticketfusionapi.onrender.com/sales', saleData);
       
-      if (saleResponse.status === 201) {
-        orderData.sales_id = saleResponse.data.id;
+      if (orderData) {
+        // orderData.sales_id = saleResponse.data.id;
   
         const orderResponse = await axios.post('https://ticketfusionapi.onrender.com/orders', { order: orderData });
   
