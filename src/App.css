@@ -43,8 +43,7 @@
   border-radius: 20px !important; 
   overflow: hidden; 
   transition: transform 0.2s; 
-  /* flex: 1 1 300px; 
-  max-width: 300px; */
+  
 }
 
 .card:hover {
@@ -53,27 +52,6 @@
 
 .card-img-top {
   border-radius: 10px 10px 0 0;
-}
-
-@media (max-width: 768px) {
-  .card {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .card {
-    flex: 1 1 45%; 
-    max-width: 45%;
-  }
-}
-
-@media (min-width: 1025px) {
-  .card {
-    flex: 1 1 30%; 
-    max-width: 30%;
-  }
 }
 
 .date-box {
