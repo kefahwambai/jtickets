@@ -43,8 +43,8 @@
   border-radius: 20px !important; 
   overflow: hidden; 
   transition: transform 0.2s; 
-  flex: 1 1 300px; 
-  max-width: 300px;
+  /* flex: 1 1 300px; 
+  max-width: 300px; */
 }
 
 .card:hover {
