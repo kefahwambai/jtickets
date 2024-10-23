@@ -13,9 +13,6 @@
   }
 }
 
-.tickets-page {
-  padding: 2rem 0; 
-}
 
 .container {
   max-width: 1200px; 
@@ -46,6 +43,8 @@
   border-radius: 20px !important; 
   overflow: hidden; 
   transition: transform 0.2s; 
+  flex: 1 1 300px; 
+  max-width: 300px;
 }
 
 .card:hover {
@@ -54,6 +53,27 @@
 
 .card-img-top {
   border-radius: 10px 10px 0 0;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card {
+    flex: 1 1 45%; 
+    max-width: 45%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .card {
+    flex: 1 1 30%; 
+    max-width: 30%;
+  }
 }
 
 .date-box {
@@ -978,13 +998,17 @@ banner
 */
 
 .main-banner {
-  background-image: url(../src/assets/Ticket/success.jpeg);
+  background-image: url(./assets/Ticket/success.jpeg), url(./assets/Ticket/musicfest.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  padding: 200px 0px 150px 0px;
+  background-position: center 20% !important; 
+  padding: 50px 0px 200px;
   position: relative;
 }
+
+
+
 
 .main-banner h6 {
   font-size: 16px;
@@ -1755,7 +1779,6 @@ footer p {
   text-decoration: none;
 }
 
-/* Style for filter tabs */
 .filter-tabs {
   list-style: none;
   padding: 0;
@@ -1763,7 +1786,6 @@ footer p {
   display: flex;
   justify-content: center;
   cursor: pointer;
-  /* border-bottom: 2px solid #ddd; */
   margin-bottom: 2rem;
 }
 
@@ -1780,15 +1802,14 @@ footer p {
   transition: all 0.3s ease;
 }
 
-.filter-tabs .filter-tab:hover {
+/* .filter-tabs .filter-tab:hover {
   background-color: #f8f9fa;
   color: #000;
-}
+} */
 
 .filter-tabs .filter-tab.active {
   background-color: darkgray;
   color: #fff;
-  border-bottom: 2px solid darkgray;;
 }
 
 .filter-tabs .filter-tab.active:hover {
@@ -2530,6 +2551,11 @@ Shows Events Page
 Tickets Page
 ---------------------------------------------
 */
+
+.tickets-page {
+  padding: 2rem 0; 
+}
+
 
 .tickets-page {
   margin-bottom: 100px;

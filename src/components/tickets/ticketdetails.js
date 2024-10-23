@@ -13,7 +13,7 @@ export default function TicketDetails() {
   const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null); 
   const navigate = useNavigate();
-  const [purchaseSuccess, setPurchaseSuccess] = useState(null);
+  // const [purchaseSuccess, setPurchaseSuccess] = useState(null);
 
   useEffect(() => {
     const fetchEventDetails = async () => {

@@ -17,7 +17,7 @@ export default function TicketsPage() {
     const fetchTickets = async () => {
       try {
         const response = await axios.get('https://ticketfusionapi.onrender.com/events');
-        console.log(response.data) 
+        // console.log(response.data) 
         const events = response.data.map(event => ({
           id: event.id,
           img: event.image ? `https://ticketfusionapi.onrender.com${event.image.url}` : '',
@@ -130,7 +130,7 @@ export default function TicketsPage() {
                   </li>
                   {Array.from({ length: totalPages }, (_, index) => (
                     <li key={index} className={`page-item ${index + 1 === currentPage ? 'active' : ''}`}>
-                      <a href="#" className="page-link" onClick={() => handlePageChange(index + 1)}>{index + 1}</a>
+                      <a  className="page-link" onClick={() => handlePageChange(index + 1)}>{index + 1}</a>
                     </li>
                   ))}
                   <li className="page-item">
