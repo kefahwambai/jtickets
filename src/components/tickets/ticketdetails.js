@@ -26,7 +26,7 @@ export default function TicketDetails() {
         const eventData = response.data;
         setEventDetails(eventData);
 
-        if (eventData.tickets.length > 0) {
+        if (eventData.tickets && eventData.tickets.length > 0) {
           setSelectedTicket(eventData.tickets[0]); 
         }
         setLoading(false);
@@ -85,7 +85,7 @@ export default function TicketDetails() {
     <div className="ticket-details-container" >
       <div className="page-heading-shows-events" 
       style={{
-        backgroundImage: `url(${eventDetails?.image?.url || ''})`,
+        backgroundImage: `url(${eventDetails.image_url || ''})`,
         backgroundSize: 'cover',
         backgroundPosition: 'bottom',
         backgroundRepeat: 'no-repeat',
@@ -105,7 +105,7 @@ export default function TicketDetails() {
             <div className="ticket-image">
               {eventDetails?.image?.url ? (
                 <img
-                  src={`${eventDetails.image.url}`}
+                  src={`${eventDetails.image_url}`}
                   alt={eventDetails?.name}
                 />
               ) : (
