@@ -19,8 +19,8 @@ export default function TicketDetails() {
     const fetchEventDetails = async () => {
       try {
         const response = await axios.get(
-          // `https://ticketfusionapi.onrender.com/events/${id}`
-          `http://localhost:3000/events/${id}`
+          `https://ticketfusionapi.onrender.com/events/${id}`
+          // `http://localhost:3000/events/${id}`
         );  
         const eventData = response.data;
         setEventDetails(eventData);
@@ -84,7 +84,7 @@ export default function TicketDetails() {
     <div className="ticket-details-container" >
       <div className="page-heading-shows-events" 
       style={{
-        backgroundImage: `url(https://ticketfusionapi.onrender.com${eventDetails?.image?.url || ''})`,
+        backgroundImage: `url(${eventDetails?.image?.url || ''})`,
         backgroundSize: 'cover',
         backgroundPosition: 'bottom',
         backgroundRepeat: 'no-repeat',
@@ -104,7 +104,7 @@ export default function TicketDetails() {
             <div className="ticket-image">
               {eventDetails?.image?.url ? (
                 <img
-                  src={`https://ticketfusionapi.onrender.com${eventDetails.image.url}`}
+                  src={`${eventDetails.image.url}`}
                   alt={eventDetails?.name}
                 />
               ) : (
