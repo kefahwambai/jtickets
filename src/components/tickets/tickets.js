@@ -97,7 +97,7 @@ export default function TicketsPage() {
               <div className="col-lg-4 mb-4" key={index}>
                 <div className="card h-100 w-75 shadow-sm">
                   <img
-                    src={ticket.img}
+                    src={ticket.img.url}
                     alt={ticket.title}
                     className="card-img-top responsive-img"
                     style={{ height: '200px', objectFit: 'cover' }}
