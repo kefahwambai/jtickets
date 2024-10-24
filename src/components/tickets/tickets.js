@@ -17,8 +17,8 @@ export default function TicketsPage() {
     const fetchTickets = async () => {
       try {
         const response = await axios.get(
-          // 'https://ticketfusionapi.onrender.com/events'
-          'http://localhost:3000/events'
+          'https://ticketfusionapi.onrender.com/events'
+          // 'http://localhost:3000/events'
         ); 
         const events = response.data.map(event => ({
           id: event.id,
