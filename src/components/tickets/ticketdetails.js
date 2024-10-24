@@ -22,6 +22,7 @@ export default function TicketDetails() {
           `https://ticketfusionapi.onrender.com/events/${id}`
           // `http://localhost:3000/events/${id}`
         );  
+        console.log(response.data) 
         const eventData = response.data;
         setEventDetails(eventData);
 
