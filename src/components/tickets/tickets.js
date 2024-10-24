@@ -10,26 +10,27 @@ export default function TicketsPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [filter, setFilter] = useState('Upcoming');
   const [loading, setLoading] = useState(true);
-  
+
   const totalPages = Math.ceil(tickets.length / ITEMS_PER_PAGE);
 
   useEffect(() => {
     const fetchTickets = async () => {
       try {
-        const response = await axios.get('https://ticketfusionapi.onrender.com/events');
-        // console.log(response.data) 
+        const response = await axios.get('https://ticketfusionapi.onrender.com/events'); 
         const events = response.data.map(event => ({
           id: event.id,
-          img: event.image ? `https://ticketfusionapi.onrender.com${event.image.url}` : '',
+          img: event.image ? `https://ticketfusionapi.onrender.com${event.image.url}` : '', 
           title: event.name,
           description: event.description,
           location: event.location,
           date: event.date
         }));
-        setTickets(events);
+        
+        console.log(events)
+        setTickets(events); 
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching events:", error);
-      } finally {
         setLoading(false);
       }
     };
@@ -65,6 +66,7 @@ export default function TicketsPage() {
   return (
     <div className="tickets-page" style={{ marginTop: '5rem' }}>
       <div className="container">
+        {/* Filter Tabs */}
         <div className="row mb-4">
           <div className="col-lg-12 text-center">
             <ul className="filter-tabs">
@@ -87,12 +89,19 @@ export default function TicketsPage() {
             </ul>
           </div>
         </div>
+
+        {/* Render Tickets */}
         <div className="row">
           {displayedTickets.length > 0 ? (
             displayedTickets.map((ticket, index) => (
               <div className="col-lg-4 mb-4" key={index}>
                 <div className="card h-100 w-75 shadow-sm">
-                  <img src={ticket.img} alt={ticket.title} className="card-img-top responsive-img" style={{ height: '200px', objectFit: 'cover' }}  />
+                  <img
+                    src={ticket.img}
+                    alt={ticket.title}
+                    className="card-img-top responsive-img"
+                    style={{ height: '200px', objectFit: 'cover' }}
+                  />
                   <div className="card-body">
                     <div className="d-flex align-items-center mb-2">
                       <div className="date-box text-center mr-3" style={{ marginLeft: '0.4rem' }}>
@@ -100,13 +109,14 @@ export default function TicketsPage() {
                         <p className="mb-0 text-muted">{new Date(ticket.date).toLocaleString('default', { month: 'short' })}</p>
                       </div>
                       <div className="ml-3">
-                        <h5 className="card-title mb-1">{ticket.title}</h5>                       
+                        <h5 className="card-title mb-1">{ticket.title}</h5>
                         <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
                         <h5 className="card-location">{ticket.location}</h5>
                       </div>
                     </div>
-                    <Link to={`/tickets/${ticket.id}`} className="btnnn btn-block"><p>Buy Ticket</p></Link>
-
+                    <Link to={`/tickets/${ticket.id}`} className="btnnn btn-block">
+                      <p>Buy Ticket</p>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -114,12 +124,13 @@ export default function TicketsPage() {
           ) : (
             <div className="col-lg-12 text-center">
               <p>No Events available.</p>
-              <br/>
+              <br />
               <p>All previous Events Will render here.</p>
             </div>
           )}
         </div>
 
+        {/* Pagination */}
         {totalPages > 1 && (
           <div className="row">
             <div className="col-lg-12">
@@ -130,7 +141,7 @@ export default function TicketsPage() {
                   </li>
                   {Array.from({ length: totalPages }, (_, index) => (
                     <li key={index} className={`page-item ${index + 1 === currentPage ? 'active' : ''}`}>
-                      <a  className="page-link" onClick={() => handlePageChange(index + 1)}>{index + 1}</a>
+                      <a className="page-link" onClick={() => handlePageChange(index + 1)}>{index + 1}</a>
                     </li>
                   ))}
                   <li className="page-item">

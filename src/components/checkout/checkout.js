@@ -42,12 +42,19 @@ const CheckoutPage = () => {
         revenue: totalPrice,
       };
   
-      // const saleResponse = await axios.post('https://ticketfusionapi.onrender.com/sales', saleData);
+      const saleResponse = await axios.post(
+        // 'https://ticketfusionapi.onrender.com/sales',
+        'http://localhost:3000/sales',
+         saleData);
       
       if (orderData) {
-        // orderData.sales_id = saleResponse.data.id;
+        orderData.sales_id = saleResponse.data.id;
   
-        const orderResponse = await axios.post('https://ticketfusionapi.onrender.com/orders', { order: orderData });
+        const orderResponse = await axios.post(
+          // 'https://ticketfusionapi.onrender.com/orders', 
+          'http://localhost:3000/orders', 
+
+          { order: orderData });
   
         if (orderResponse.status === 201) {
           window.alert('Check Email for yout ticket!')

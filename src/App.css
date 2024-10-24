@@ -42,6 +42,7 @@
   border: none; 
   border-radius: 20px !important; 
   overflow: hidden; 
+  margin: 0 auto;
   transition: transform 0.2s; 
   
 }
@@ -931,9 +932,9 @@ button {
 }
 
 .responsive-img {
-  max-width: 100%; /* Ensure the image doesn't exceed the container's width */
-  height: auto; /* Maintain the aspect ratio */
-  object-fit: cover; /* Optional: ensures the image covers the element while maintaining the aspect ratio */
+  max-width: 100%; 
+  height: auto; 
+  object-fit: cover;
 }
 
 .card-title {
@@ -976,13 +977,13 @@ banner
 */
 
 .main-banner {
-  background-image: url(./assets/Ticket/success.jpeg), url(./assets/Ticket/musicfest.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-  background-position: center 20% !important; 
-  padding: 50px 0px 200px;
-  position: relative;
+  /* background-image: url(./assets/Ticket/success.jpeg), url(./assets/Ticket/musicfest.jpg); */
+ 
+  /* background-position: center 30% !important;  */
+  /* padding: 2rem 0px 1rem;
+  margin-top: -13rem; */
+  /* margin-bottom: -10rem; */
+  /* position: relative; */
 }
 
 

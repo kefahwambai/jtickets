@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from "react-slick";
-// import { Link } from 'react-router-dom';
+import image1 from "../../assets/Ticket/musicfest.jpg";
+import image2 from "../../assets/Ticket/success.jpeg";
 
 export default function Banner() {
   var settings = {
@@ -11,16 +12,25 @@ export default function Banner() {
     slidesToScroll: 1,
   };
 
+  const images = [image1, image2];
+
   return (
     <Slider className="main-banner" {...settings}>
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="main-content">
-            </div>
-          </div>
+      {images.map((img, index) => (
+        <div key={index}>
+          <img
+            src={img}
+            alt={`Banner ${index}`}
+            style={{
+              width: '100%',
+              height: '20rem',
+              objectPosition: 'center 35%',
+              // padding: '50px 0px 200px',
+              objectFit: 'cover',
+            }}
+          />
         </div>
-      </div>
+      ))}
     </Slider>
   );
 }

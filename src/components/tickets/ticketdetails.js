@@ -18,7 +18,10 @@ export default function TicketDetails() {
   useEffect(() => {
     const fetchEventDetails = async () => {
       try {
-        const response = await axios.get(`https://ticketfusionapi.onrender.com/events/${id}`);  
+        const response = await axios.get(
+          // `https://ticketfusionapi.onrender.com/events/${id}`
+          `http://localhost:3000/events/${id}`
+        );  
         const eventData = response.data;
         setEventDetails(eventData);
 
