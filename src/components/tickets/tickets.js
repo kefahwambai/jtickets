@@ -19,7 +19,7 @@ export default function TicketsPage() {
         const response = await axios.get('https://ticketfusionapi.onrender.com/events'); 
         const events = response.data.map(event => ({
           id: event.id,
-          img: event.image ? `https://ticketfusionapi.onrender.com${event.image.url}` : '', 
+          img: event.image, 
           title: event.name,
           description: event.description,
           location: event.location,
