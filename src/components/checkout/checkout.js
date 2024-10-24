@@ -47,8 +47,8 @@ const CheckoutPage = () => {
         // 'http://localhost:3000/sales',
          saleData);
       
-      if (orderData) {
-        orderData.sales_id = saleResponse.data.id;
+        if (saleResponse && saleResponse.data.id) {
+          orderData.sales_id = saleResponse.data.id;
   
         const orderResponse = await axios.post(
           'https://ticketfusionapi.onrender.com/orders', 
@@ -114,7 +114,7 @@ const CheckoutPage = () => {
                 />
               </Form.Group>
 
-              <Button variant="danger" className="w-100 payment-btn" onClick={handlePayment}>
+              <Button variant="danger" className="w-100 payment-btn" onClick={handlePayment}  disabled={!phone || !email}>
                 Confirm & Pay
               </Button>
             </Form>
