@@ -10,6 +10,8 @@ export default function Banner() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
   };
 
   const images = [image1, image2];
@@ -24,7 +26,7 @@ export default function Banner() {
             style={{
               width: '100%',
               height: '20rem',
-              objectPosition: 'center 35%',
+              objectPosition: 'center 30%',
               // padding: '50px 0px 200px',
               objectFit: 'cover',
             }}

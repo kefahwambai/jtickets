@@ -86,7 +86,7 @@ const CheckoutPage = () => {
           <div className="payment-section text-center">
             <h4>Payment Method</h4>
             <div className="payment-buttons d-flex justify-content-center mb-3">
-              <Button variant="dark" className="payment-btn">
+              <Button variant="dark" className="payment-btnn">
                 <BsPhone className="me-2" /> Mpesa
               </Button>
             </div>
@@ -114,7 +114,7 @@ const CheckoutPage = () => {
                 />
               </Form.Group>
 
-              <Button variant="danger" className="w-100 payment-btn" onClick={handlePayment}  disabled={!phone || !email}>
+              <Button className="w-100 payment-btn" onClick={handlePayment}  disabled={!phone || !email}>
                 Confirm & Pay
               </Button>
             </Form>

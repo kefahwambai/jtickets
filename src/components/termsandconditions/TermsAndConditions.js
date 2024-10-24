@@ -42,7 +42,7 @@ const TermsAndConditions = () => {
         We may update these terms from time to time. Any changes will be posted on our website and become effective immediately.
       </p>
 
-      <p style={{ marginBottom: '5rem'}}>If you have any questions regarding these terms, please contact our support team at <a href="mailto:support@ticketfusion.com">support@ticketfusion.com</a>.</p>
+      <p style={{ marginBottom: '10rem'}}>If you have any questions regarding these terms, please contact our support team at <a href="mailto:support@ticketfusion.com">support@ticketfusion.com</a>.</p>
     </div>
   );
 };

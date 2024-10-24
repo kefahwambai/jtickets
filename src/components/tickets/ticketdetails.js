@@ -19,8 +19,8 @@ export default function TicketDetails() {
     const fetchEventDetails = async () => {
       try {
         const response = await axios.get(
-          `https://ticketfusionapi.onrender.com/events/${id}`
-          // `http://localhost:3000/events/${id}`
+          // `https://ticketfusionapi.onrender.com/events/${id}`
+          `http://localhost:3000/events/${id}`
         );  
         console.log(response) 
         const eventData = response.data;

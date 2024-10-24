@@ -40,7 +40,7 @@ const PrivacyPolicy = () => {
         You have the right to access, correct, or delete your personal data. To request any of these actions, please contact us at <a href="mailto:privacy@ticketfusion.com">privacy@ticketfusion.com</a>.
       </p>
 
-      <p style={{ marginBottom: '5rem'}}>If you have any concerns about how your data is handled, please reach out to us at <a href="mailto:privacy@ticketfusion.com">privacy@ticketfusion.com</a>.</p>
+      <p style={{ marginBottom: '10rem'}}>If you have any concerns about how your data is handled, please reach out to us at <a href="mailto:privacy@ticketfusion.com">privacy@ticketfusion.com</a>.</p>
     </div>
   );
 };
