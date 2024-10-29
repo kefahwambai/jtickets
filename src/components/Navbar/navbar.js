@@ -1,31 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// import { IoTicketSharp } from "react-icons/io5";
 
 export default function Navbar() {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector('.header-area');
+      if (window.scrollY > 50) {
+        header.classList.add('header-blur');
+      } else {
+        header.classList.remove('header-blur');
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="header-area header-sticky">
+    <header className="header-area">
       <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <nav className="main-nav d-flex justify-content-between align-items-center">
-              <Link to="/" className="logo">
-                Ticket<em>Fusion</em>
-              </Link>
-              <ul className="nav d-none d-md-flex">
-                {/* <li>
-                  <IoTicketSharp style={{ fontSize: '2rem'}} />
-                  <span style={{ marginTop: '4rem'}}>Tickets</span>
-                </li> */}
+        <nav className="main-nav d-flex justify-content-between align-items-center">
+          <Link to="/" className="logo">
+            Ticket<em>Fusion</em>
+          </Link>
+          <ul className="admin-dropdown d-none d-md-block">
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Organizer
+              </a>
+              <ul className="dropdown-menu">
+                <li><a className="dropdown-item" href="https://ticketfusion-admin.vercel.app" target='_blank'>Admin Login</a></li>
               </ul>
-              <h1 className="helpline d-none d-md-block">
-                <a href="tel:0722222222">
-                  <span>Need Help? </span> 0722222222
-                </a>
-              </h1>
-            </nav>
+            </li>
+          </ul>
+          <button className="menu-trigger d-md-none" onClick={() => setMenuOpen(!isMenuOpen)}>
+            <span className={`hamburger ${isMenuOpen ? 'open' : ''}`}></span>
+          </button>
+        </nav>
+        {isMenuOpen && (
+          <div className="mobile-menu">
+            <ul>
+              <li><a href="https://ticketfusion-admin.vercel.app" target='_blank'>Admin Login</a></li>
+            </ul>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );

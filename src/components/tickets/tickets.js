@@ -29,7 +29,7 @@ export default function TicketsPage() {
           date: event.date
         }));
         
-        console.log(events)
+        // console.log(events)
         setTickets(events); 
         setLoading(false);
       } catch (error) {

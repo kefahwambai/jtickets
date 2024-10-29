@@ -2,10 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .App {
-  text-align: center;
-  font-family: "Unica One", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
 }
 
 .App-logo {
@@ -129,21 +130,11 @@
 }
 
 
-.helpline {
-  font-size: 1rem;
-}
-
-.helpline a {
-
-}
-
-.helpline span {
-  color: black;
-}
-
 .menu-trigger {
   font-size: 1.2rem;
   cursor: pointer;
+  border: none !important;
+  background: transparent !important;
 }
 
 @media (max-width: 768px) {
@@ -401,19 +392,96 @@ header
   color: #2a2a2a;
 }
 
+
 .header-area {
-  position: relative;
-  top: 0px;
-  left: 0px;
-  right: 0px;
+  height: 80px; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  height: 80px;
-  background: #fff;
-  -webkit-transition: all .5s ease 0s;
-  -moz-transition: all .5s ease 0s;
-  -o-transition: all .5s ease 0s;
+  background: transparent;
   transition: all .5s ease 0s;
 }
+
+.header-blur {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 640px) {
+  .header-area {
+    height: 5rem !important; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: transparent;
+    transition: all .5s ease 0s;
+  }
+  
+  .header-blur {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.7);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .header-area {
+    height: 5rem !important; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: transparent;
+    transition: all .5s ease 0s;
+  }
+  
+  .header-blur {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.7);
+  
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .header-area {
+    height: 5rem !important; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: transparent;
+    transition: all .5s ease 0s;
+  }
+  
+  .header-blur {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.7);
+  }
+}
+
+@media (min-width: 1281px) {
+  .header-area {
+    hheight: 5rem !important; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: transparent;
+    transition: all .5s ease 0s;
+  }
+  
+  .header-blur {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.7);
+  }
+}
+
 
 .header-area .main-nav {
   min-height: 80px;
@@ -499,114 +567,61 @@ header
 
 .header-area .main-nav .menu-trigger {
   cursor: pointer;
-  display: block;
   position: absolute;
   top: 23px;
+  right: 40px;
   width: 32px;
   height: 40px;
-  text-indent: -9999em;
   z-index: 99;
-  right: 40px;
-  display: none;
+  display: none; 
 }
 
 .header-area .main-nav .menu-trigger span,
-.header-area .main-nav .menu-trigger span:before,
-.header-area .main-nav .menu-trigger span:after {
-  -moz-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-  background-color: #1e1e1e;
-  display: block;
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  left: 0;
-}
-
-.background-header .main-nav .menu-trigger span,
-.background-header .main-nav .menu-trigger span:before,
-.background-header .main-nav .menu-trigger span:after {
-  background-color: #1e1e1e;
-}
-
-.header-area .main-nav .menu-trigger span:before,
-.header-area .main-nav .menu-trigger span:after {
-  -moz-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-  background-color: #1e1e1e;
-  display: block;
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  left: 0;
-  width: 75%;
-}
-
-.background-header .main-nav .menu-trigger span:before,
-.background-header .main-nav .menu-trigger span:after {
-  background-color: #1e1e1e;
-}
-
-.header-area .main-nav .menu-trigger span:before,
-.header-area .main-nav .menu-trigger span:after {
+.header-area .main-nav .menu-trigger span::before,
+.header-area .main-nav .menu-trigger span::after {
   content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  left: 0;
+  background-color: #1e1e1e;
+  transition: all 0.4s;
 }
 
 .header-area .main-nav .menu-trigger span {
   top: 16px;
 }
 
-.header-area .main-nav .menu-trigger span:before {
-  -moz-transform-origin: 33% 100%;
-  -ms-transform-origin: 33% 100%;
-  -webkit-transform-origin: 33% 100%;
-  transform-origin: 33% 100%;
+.header-area .main-nav .menu-trigger span::before {
   top: -10px;
-  z-index: 10;
+  transform-origin: 33% 100%;
 }
 
-.header-area .main-nav .menu-trigger span:after {
-  -moz-transform-origin: 33% 0;
-  -ms-transform-origin: 33% 0;
-  -webkit-transform-origin: 33% 0;
-  transform-origin: 33% 0;
+.header-area .main-nav .menu-trigger span::after {
   top: 10px;
+  transform-origin: 33% 0;
 }
 
-.header-area .main-nav .menu-trigger.active span,
-.header-area .main-nav .menu-trigger.active span:before,
-.header-area .main-nav .menu-trigger.active span:after {
-  background-color: transparent;
-  width: 100%;
+.header-area .main-nav .menu-trigger.active span {
+  background-color: transparent; /* Hide middle bar */
+  width: 100%; /* Full width */
 }
 
-.header-area .main-nav .menu-trigger.active span:before {
-  -moz-transform: translateY(6px) translateX(1px) rotate(45deg);
-  -ms-transform: translateY(6px) translateX(1px) rotate(45deg);
-  -webkit-transform: translateY(6px) translateX(1px) rotate(45deg);
+.header-area .main-nav .menu-trigger.active span::before {
   transform: translateY(6px) translateX(1px) rotate(45deg);
-  background-color: #1e1e1e;
 }
 
-.background-header .main-nav .menu-trigger.active span:before {
-  background-color: #1e1e1e;
-}
-
-.header-area .main-nav .menu-trigger.active span:after {
-  -moz-transform: translateY(-6px) translateX(1px) rotate(-45deg);
-  -ms-transform: translateY(-6px) translateX(1px) rotate(-45deg);
-  -webkit-transform: translateY(-6px) translateX(1px) rotate(-45deg);
+.header-area .main-nav .menu-trigger.active span::after {
   transform: translateY(-6px) translateX(1px) rotate(-45deg);
+}
+
+/* Background header styling */
+.background-header .main-nav .menu-trigger span,
+.background-header .main-nav .menu-trigger span::before,
+.background-header .main-nav .menu-trigger span::after {
   background-color: #1e1e1e;
 }
 
-.background-header .main-nav .menu-trigger.active span:after {
-  background-color: #1e1e1e;
-}
 
 .header-area.header-sticky {
   min-height: 80px;
@@ -869,6 +884,7 @@ banner
 */
 
 .main-banner {
+  margin-top: 5rem;
   /* background-image: url(./assets/Ticket/success.jpeg), url(./assets/Ticket/musicfest.jpg); */
  
   /* background-position: center 30% !important;  */
@@ -1407,8 +1423,7 @@ Subscribe
 
 
 footer {
-  font-family: "Sniglet", system-ui !important;
-  font-style: normal;
+  height: 18.5rem !important;
 
 }
 
@@ -1443,9 +1458,6 @@ footer .footer-email {
   margin-top: 1rem;
 }
 
-footer .text-center {
-  margin-bottom: -3rem !important;
-}
 
 .terms-conditions-container {
   margin-top: 3rem;

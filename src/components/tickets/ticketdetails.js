@@ -82,22 +82,7 @@ export default function TicketDetails() {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="ticket-details-container" >
-      <div className="page-heading-shows-events" 
-      style={{
-        backgroundImage: `url(${eventDetails.image_url || ''})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'bottom',
-        backgroundRepeat: 'no-repeat',
-      }}>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              {/* <h2>{eventDetails?.name || "Event Details"}</h2> */}
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="ticket-details-container" >     
 
       <div className="ticket-details-page container">
         <div className="row">

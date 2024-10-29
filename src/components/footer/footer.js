@@ -29,22 +29,22 @@ import XIcon from '@mui/icons-material/X';
 const MultiColumnFooter = () => {
   return (
     <footer className="bg-light py-5">
-      <Container >
+      <Container className='text-end'>
         <Row>
-          <Col md={4}>
+          <Col md={4} sm={6} xs={12}>
             <h5>Company</h5>
             <ul className="list-unstyled">
               <li><Link to="/about-us">About</Link></li>
             </ul>
           </Col>
-          <Col md={2}>
+          <Col md={4} sm={6} xs={12}>
             <h5>Legal</h5>
             <ul className="list-unstyled">
               <li><Link to="/terms-and-conditons">Terms & Conditions</Link></li>
               <li className='privacy-footer'><Link to="/privacy-policy">Privacy Policy</Link></li>
             </ul>
           </Col>
-          <Col md={6}>
+          <Col md={4} sm={12} xs={12}>
             <h5>Connect with Us</h5>
             <div className="social">
               <a href="#" className='m-5'><InstagramIcon/></a>
@@ -54,6 +54,7 @@ const MultiColumnFooter = () => {
             <p>Phone: (123) 456-7890</p>
           </Col>
         </Row>
+        <hr/>
         <Row className="mt-3">
           <Col className="text-center">
             <p>TicketFusion © 2024</p>
