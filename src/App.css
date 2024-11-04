@@ -902,25 +902,6 @@ banner
   margin-bottom: 4rem; 
 }
 
-.buy-ticket-btn {
-  background-color: #00A19B !important;
-  color: white !important;
-  padding: 0.5rem !important;
-  text-align: center;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-
-.buy-ticket-btn p {
-  color: white !important;
-}
-
-.buy-ticket-btn:hover {
-  color: #00A19B !important;
-}
 
 @media (max-width: 768px) {
   .main-banner {

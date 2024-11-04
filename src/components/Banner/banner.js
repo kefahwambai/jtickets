@@ -52,7 +52,7 @@ export default function Banner() {
                             className="event-image responsive-img"
                             style={{ height: '400px', objectFit: 'cover', border: 'none' }}
                           />
-                          <Link to={`/tickets/${ticket.id}`} className="btnnn btn-block">
+                          <Link to={`/tickets/${ticket.id}`} className="btnnn btn-block" style={{width: '1.5rem'}}>
                             <p>Buy Ticket</p>
                           </Link>
                         </div>
