@@ -1018,17 +1018,17 @@ banner
 }
 
 .event-image {
-  width: 200px;
+  width: 400px;
   border: none;
   border-radius: 10px;
   margin-bottom: 10px;
 }
 
 .buy-ticket-btn {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #00A19B !important;
   color: white !important;
   /* padding: 10px 20px; */
-  height: 1rem;
+  height: 2rem;
   text-align: center;
   border-radius: 5px;
   text-decoration: none;
@@ -1037,8 +1037,12 @@ banner
   cursor: pointer;
 }
 
+.buy-ticket-btn p {
+  color: white !important;
+}
+
 .buy-ticket-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  color: #00A19B !important;
 }
 
 
