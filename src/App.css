@@ -428,15 +428,15 @@ header
   position: absolute;
   background: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: none; /* Hide by default */
+  display: none;
 }
 
 .nav-item:hover .dropdown-menu {
-  display: block; /* Show on hover */
+  display: block; 
 }
 
 .menu-trigger {
-  display: none; /* Hidden by default */
+  display: none; 
   border: none;
   background: transparent;
   cursor: pointer;
@@ -482,16 +482,19 @@ header
 }
 
 .mobile-menu {
-  background: white;
+  backdrop-filter: blur(30px);
   padding: 1rem;
   position: absolute;
-  top: 80px; /* Below the header */
+  top: 80px; 
   left: 0;
   right: 0;
   z-index: 50;
 }
 
-/* Media Queries for Responsive Design */
+.mobile-menu li a {
+  color: black;
+}
+
 @media (max-width: 640px) {
   .header-area {
     height: 5rem !important; 
@@ -541,11 +544,11 @@ header
   background-color: transparent;
   position: relative;
   z-index: 999;
-  display: flex; /* Set to flex for better layout on larger screens */
+  display: flex; 
 }
 
 .header-area .main-nav .nav li {
-  padding: 0 20px; /* Combine padding for cleaner code */
+  padding: 0 20px; 
 }
 
 .header-area .main-nav .nav li a {
@@ -588,7 +591,7 @@ header
   width: 32px;
   height: 40px;
   z-index: 99;
-  display: none; /* Hidden by default */
+  display: none; 
 }
 
 .header-area .main-nav .menu-trigger span,
@@ -642,16 +645,15 @@ header
   color: #656c74;
 }
 
-/* Responsive Design Adjustments */
 @media (max-width: 1200px) {
   .header-area .main-nav .nav li {
-    padding: 0 12px; /* Reduce padding on smaller screens */
+    padding: 0 12px;
   }
 }
 
 @media (max-width: 767px) {
   .header-area .main-nav .nav li a.active:after {
-    display: none; /* Hide active underline on mobile */
+    display: none; 
   }
   .header-area .main-nav .logo {
     color: #1e1e1e;
@@ -670,19 +672,20 @@ header
     margin-left: 30px;
   }
   .header-area .menu-trigger {
-    display: block !important; /* Show hamburger menu */
+    display: block !important; 
+    margin-right: -2rem !important;
   }
   .header-area .main-nav {
     overflow: hidden;
-    flex-direction: column; /* Stack items vertically in mobile view */
-    display: none; /* Hide navigation by default */
-    width: 100%; /* Full width for mobile menu */
+    flex-direction: column; 
+    display: none; 
+    width: 100%;
   }
   .header-area .main-nav .nav li {
     width: 100%;
     background: #fff;
     border-bottom: 1px solid #eee;
-    padding: 10px 0; /* Adjust padding for mobile */
+    padding: 10px 0;
   }
   .header-area .main-nav .nav li a {
     height: 50px !important;
