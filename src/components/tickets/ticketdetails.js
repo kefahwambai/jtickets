@@ -98,8 +98,11 @@ export default function TicketDetails() {
                 <p className="date-month">{new Date(eventDetails?.date).toLocaleString('default', { month: 'short' })}</p>
               </div>
               <h4 className="event-title">{eventDetails?.name}</h4>
-              <p className="event-location">{eventDetails?.location}</p>
-              <p className="event-description">{eventDetails?.description}</p>
+              <div className="event-location mb-2">
+                <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <span className="ml-2">{eventDetails?.location}</span>
+              </div>
+              <p className="event-description">About Event: {eventDetails?.description}</p>
 
               {eventDetails?.tickets?.length > 0 ? (
                 <>

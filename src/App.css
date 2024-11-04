@@ -1306,7 +1306,7 @@ Subscribe
   margin-top: 5px;
 }
 
-.subscribe form ::-webkit-input-placeholder { /* Edge */
+.subscribe form ::-webkit-input-placeholder { 
   color: #fff;
   font-weight: 200;
 }
@@ -1443,7 +1443,6 @@ footer .footer-email {
   text-decoration: underline;
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   .terms-conditions-container {
     padding: 1rem;
@@ -1512,7 +1511,6 @@ footer .footer-email {
   text-decoration: underline;
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   .privacy-policy-container {
     padding: 1rem;
@@ -1544,13 +1542,13 @@ footer .footer-email {
 }
 
 .ticket-details-container {
-  padding: 2rem 1rem; /* Add padding for smaller screens */
+  padding: 2rem 1rem; 
 }
 
 .ticket-image img {
   width: 100%;
   border-radius: 5px;
-  height: auto; /* Maintain aspect ratio */
+  height: auto; 
 }
 
 .ticket-summary {
