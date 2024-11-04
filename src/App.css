@@ -861,7 +861,7 @@ banner
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  padding: 200px 0px 150px 0px;
+  padding: 100px 0px 150px 0px;
   position: relative;
 }
 
@@ -1027,7 +1027,7 @@ banner
 .buy-ticket-btn {
   background-color: #00A19B !important;
   color: white !important;
-  padding: 2rem;
+  padding: 1rem;
   /* padding: 10px 20px; */
   /* height: 2rem; */
   text-align: center;
