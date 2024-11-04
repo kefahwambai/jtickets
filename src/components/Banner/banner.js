@@ -37,7 +37,7 @@ export default function Banner() {
         <div className="row">
           <div className="col-lg-12">
             <div className="main-content">
-              <div id="carouselExampleFade" className="carousel slide carousel-fade">
+              <div className="carousel slide carousel-fade">
                 <div className="carousel-inner">
                   {tickets.length > 0 ? (
                     tickets.map((ticket, index) => (
@@ -50,7 +50,7 @@ export default function Banner() {
                             src={ticket.img.url}
                             alt={ticket.title}
                             className="event-image responsive-img"
-                            style={{ height: '400px', objectFit: 'cover', border: 'none' }}
+                            style={{ height: '100px', objectFit: 'cover', border: 'none' }}
                           />
                           <Link to={`/tickets/${ticket.id}`} className="buy-ticket-btn">
                             <p>Buy Ticket</p>

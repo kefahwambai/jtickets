@@ -1017,8 +1017,9 @@ banner
 }
 
 .event-image {
-  width: 100%;
+  width: 100px;
   border: none;
+  border-radius: 10rem;
 }
 
 .buy-ticket-btn {
