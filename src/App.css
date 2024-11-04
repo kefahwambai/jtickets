@@ -857,179 +857,55 @@ banner
 
 .main-banner {
   margin-top: 5rem;
+  position: relative; 
+  padding: 100px 0px 50px 0px;
+  text-align: center;
+}
+
+.main-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: url(../src/assets/Ticket/blackcrowd.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  text-align: center;
-  padding: 100px 0px 150px 0px;
-  position: relative;
+  filter: blur(5px); 
+  z-index: 0 !important; 
 }
 
-
-
-
-.main-banner h6 {
-  font-size: 16px;
-  color: #fff;
-  font-weight: 300;
-}
-
-.main-banner h2 {
-  font-size: 48px;
-  font-weight: 800;
-  color: #fff;
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-15px);
-  }
-  60% {
-    transform: translateY(-7px);
-  }
-}
-
-.main-banner .next-show {
-  position: absolute;
-  top: -140px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: bounce 2s infinite;
-  color: #fff;
-  font-size: 18px;
-}
-
-.main-banner .next-show i {
-  font-size: 12px;
-  margin-top: 10px;
-}
-
-.main-banner .next-show span {
-  display: block;
-  font-size: 14px;
-  font-weight: 300;
-}
-
-.main-banner .counter-content {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  padding: 12px 0px;
-  height: 100px;
-  background-color: rgba(250, 250, 250, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main-banner .counter-content ul {
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.main-banner .counter-content li {
-  font-size: 16px;
-  font-weight: 300;
-  text-transform: capitalize;
-  color: #fff;
-  min-width: 15%;
-  text-align: center;
-}
-
-.main-banner .counter-content li span {
-  display: block;
-  font-size: 40px;
-  font-weight: 900;
-  margin-top: -10px;
-}
-
-@media (max-width: 768px) {
-  .main-banner {
-    padding: 150px 0px 100px 0px;
-  }
-
-  .main-banner h2 {
-    font-size: 36px;
-  }
-
-  .main-banner .counter-content {
-    height: auto;
-  }
-
-  .main-banner .counter-content li {
-    font-size: 14px;
-    min-width: auto;
-  }
-
-  .main-banner .counter-content li span {
-    font-size: 30px;
-  }
-
-  .main-banner .next-show {
-    top: -120px;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-banner {
-    padding: 100px 0px 80px 0px;
-  }
-
-  .main-banner h2 {
-    font-size: 28px;
-  }
-
-  .main-banner .counter-content {
-    flex-direction: column;
-    padding: 20px 0px;
-  }
-
-  .main-banner .counter-content li {
-    font-size: 14px;
-  }
-
-  .main-banner .counter-content li span {
-    font-size: 24px;
-  }
-
-  .main-banner .next-show {
-    top: -100px;
-    font-size: 14px;
-  }
+.main-banner .container {
+  position: relative; 
+  z-index: 1; 
 }
 
 .event-card {
   position: relative;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: none;
   background: none;
+  max-height: 400px; 
+  overflow: hidden; 
 }
 
 .event-image {
-  width: 300px;
+  width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 250px; /* Limit max height */
   border: none;
   border-radius: 10px;
-  margin-bottom: 4rem;
+  margin-bottom: 4rem; 
 }
 
 .buy-ticket-btn {
   background-color: #00A19B !important;
   color: white !important;
   padding: 1rem;
-  /* padding: 10px 20px; */
-  /* height: 2rem; */
   text-align: center;
   border-radius: 5px;
   text-decoration: none;
@@ -1045,6 +921,27 @@ banner
 .buy-ticket-btn:hover {
   color: #00A19B !important;
 }
+
+@media (max-width: 768px) {
+  .main-banner {
+    padding: 80px 0px 50px 0px; 
+  }
+
+  .event-image {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-banner {
+    padding: 60px 0px 30px 0px; 
+  }
+
+  .event-image {
+    max-height: 150px; 
+  }
+}
+
 
 
 
