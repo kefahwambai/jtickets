@@ -102,7 +102,7 @@ export default function TicketDetails() {
                 <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
                 <span className="ml-2">{eventDetails?.location}</span>
               </div>
-              <p className="event-description">About Event: {eventDetails?.description}</p>
+              <p className="event-description">{eventDetails?.description}</p>
 
               {eventDetails?.tickets?.length > 0 ? (
                 <>
