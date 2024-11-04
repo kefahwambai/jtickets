@@ -7,7 +7,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('.header-area');
-      if (window.scrollY > 50) {
+      if (window.scrollY > 1) {
         header.classList.add('header-blur');
       } else {
         header.classList.remove('header-blur');

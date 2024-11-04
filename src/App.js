@@ -12,16 +12,21 @@ const TermsAndConditions = lazy(() => import("./components/termsandconditions/Te
 const TicketDetails = lazy(() => import("./components/tickets/ticketdetails"));
 const CheckoutPage = lazy(() => import("./components/checkout/checkout"));
 
-
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2500);
+    }, 1500); 
 
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    Body.preload?.();
+    AboutUs.preload?.();
+    TicketDetails.preload?.();
   }, []);
 
   if (loading) {
@@ -51,4 +56,3 @@ function App() {
 }
 
 export default App;
-

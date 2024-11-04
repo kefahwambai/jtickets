@@ -4,7 +4,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Preloader from '../Preloader/Preloader';
 import { Link } from 'react-router-dom';
 
-
 export default function TicketDetails() {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1); 
@@ -13,16 +12,11 @@ export default function TicketDetails() {
   const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null); 
   const navigate = useNavigate();
-  // const [purchaseSuccess, setPurchaseSuccess] = useState(null);
 
   useEffect(() => {
     const fetchEventDetails = async () => {
       try {
-        const response = await axios.get(
-          `https://ticketfusionapi.onrender.com/events/${id}`
-          // `http://localhost:3000/events/${id}`
-        );  
-        console.log(response) 
+        const response = await axios.get(`https://ticketfusionapi.onrender.com/events/${id}`);
         const eventData = response.data;
         setEventDetails(eventData);
 
@@ -41,12 +35,12 @@ export default function TicketDetails() {
   }, [id]);
 
   const handleQuantityChange = (increment) => {
-    setQuantity((prevQuantity) => Math.max(1, prevQuantity + increment)); 
+    setQuantity((prevQuantity) => Math.min(3, Math.max(1, prevQuantity + increment)));
   };
 
   const handleInputChange = (e) => {
     const value = parseInt(e.target.value);
-    setQuantity(isNaN(value) ? 1 : Math.max(1, value));
+    setQuantity(isNaN(value) ? 1 : Math.min(3, Math.max(1, value)));
   };
 
   const getTotalPrice = () => {
@@ -82,8 +76,7 @@ export default function TicketDetails() {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="ticket-details-container" >     
-
+    <div className="ticket-details-container">     
       <div className="ticket-details-page container">
         <div className="row">
           <div className="col-lg-8">
@@ -139,6 +132,7 @@ export default function TicketDetails() {
                           onChange={handleInputChange} 
                           className="quantity-input"
                           min="1"
+                          max="3"
                         />
                         <button className="quantity-btn plus" onClick={() => handleQuantityChange(1)}>+</button>
                       </div>
