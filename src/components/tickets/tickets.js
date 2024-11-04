@@ -127,8 +127,6 @@ export default function TicketsPage() {
           ) : (
             <div className="col-lg-12 text-center">
               <p>No Events available.</p>
-              <br />
-              <p>All previous Events Will render here.</p>
             </div>
           )}
         </div>

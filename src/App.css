@@ -905,7 +905,7 @@ banner
 .buy-ticket-btn {
   background-color: #00A19B !important;
   color: white !important;
-  padding: 0.5rem;
+  padding: 0.5rem !important;
   text-align: center;
   border-radius: 5px;
   text-decoration: none;
