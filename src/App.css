@@ -1010,6 +1010,7 @@ banner
 .event-card {
   position: relative;
   display: flex;
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
   border: none;
@@ -1019,12 +1020,11 @@ banner
 .event-image {
   width: 100px;
   border: none;
-  border-radius: 10rem;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .buy-ticket-btn {
-  position: absolute;
-  bottom: 20px;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 10px 20px;
@@ -1038,6 +1038,7 @@ banner
 .buy-ticket-btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
 
 
 /*
