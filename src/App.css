@@ -894,9 +894,9 @@ banner
 }
 
 .event-image {
-  width: 100%; /* Make image responsive */
-  height: auto; /* Maintain aspect ratio */
-  max-height: 250px; /* Limit max height */
+  width: 50%; 
+  height: auto; 
+  max-height: 250px;
   border: none;
   border-radius: 10px;
   margin-bottom: 4rem; 
@@ -905,7 +905,7 @@ banner
 .buy-ticket-btn {
   background-color: #00A19B !important;
   color: white !important;
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
   border-radius: 5px;
   text-decoration: none;
