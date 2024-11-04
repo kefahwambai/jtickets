@@ -1018,7 +1018,7 @@ banner
 }
 
 .event-image {
-  width: 100px;
+  width: 200px;
   border: none;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -1026,13 +1026,15 @@ banner
 
 .buy-ticket-btn {
   background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 10px 20px;
+  color: white !important;
+  /* padding: 10px 20px; */
+  height: 1rem;
   text-align: center;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .buy-ticket-btn:hover {
